@@ -36,6 +36,7 @@ public class FileManipulationTests extends TestBase {
 
         By configurationButton = By.xpath("//li[contains(.,'Configuration')]");
         By dataImportButton = By.xpath("//a[text()='Data Import']");
+
         wait.until(f -> {
             driver.findElement(configurationButton).click();
             return true;
