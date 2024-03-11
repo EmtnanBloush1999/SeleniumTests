@@ -1,5 +1,6 @@
 package TestNG;
 
+import engine.ActionsBot;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
@@ -18,11 +19,12 @@ public abstract class TestBase {
     protected WebDriver driver;
     protected Wait<WebDriver> wait;
     protected static Logger logger;
+    protected ActionsBot bot;
 
     @BeforeClass
     public static void beforeClass(){
         Configurator.initialize(null, "src/main/resources/properties/log4j2.properties");
-        logger = LogManager.getLogger(Junit.TestBase.class.getName());
+        logger = LogManager.getLogger(TestBase.class.getName());
     }
 
     @BeforeMethod
@@ -34,6 +36,7 @@ public abstract class TestBase {
 
         logger.info("Configuring 5 second explicit wait");
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        bot = new ActionsBot(driver, wait, logger);
     }
 
     @AfterMethod
