@@ -1,4 +1,4 @@
-package testPackage;
+package Junit;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WindowType;
