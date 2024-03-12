@@ -41,7 +41,6 @@ public class Assignment1 extends TestBase {
 
         String color = blueSquare.getCssValue("background-color");
         logger.info("The color after Double Click is ( " + color+" )");
-
         Assertions.assertNotEquals(beforeClickColor, color);
 
         driver.switchTo().defaultContent();
