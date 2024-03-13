@@ -33,11 +33,19 @@ public class GoogleTest extends TestBase{
         bot.navigate("https://www.google.com/");
         By googleLogoImage = By.cssSelector("img[alt='Google']");
 
+//        Assert.assertTrue(driver.findElement(googleLogoImage).isDisplayed());
+
+//        Assert.assertFalse(driver.findElement(googleLogoImage).isDisplayed(), "first check failed");
+//        Assert.assertTrue(driver.findElement(googleLogoImage).isDisplayed(), "second check failed");
+//        Assert.assertFalse(driver.findElement(googleLogoImage).isDisplayed(), "third check failed");
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(driver.findElement(googleLogoImage).isDisplayed(), "first check failed");
+        softAssert.assertFalse(driver.findElement(googleLogoImage).isDisplayed(), "first check failed");
         softAssert.assertTrue(driver.findElement(googleLogoImage).isDisplayed(), "second check failed");
-        softAssert.assertTrue(driver.findElement(googleLogoImage).isDisplayed(), "third check failed");
+        softAssert.assertFalse(driver.findElement(googleLogoImage).isDisplayed(), "third check failed");
         softAssert.assertAll();
+
+        Assert.assertTrue(driver.findElement(googleLogoImage).isDisplayed());
 
     }
 }
