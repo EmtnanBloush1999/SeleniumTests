@@ -39,7 +39,8 @@ public abstract class TestBase {
     public void beforeMethod(){
         logger.info("Opening Chrome Browser");
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("start-maximized");
+//        chromeOptions.addArguments("start-maximized");
+        chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
 
         logger.info("Configuring 5 second explicit wait");
