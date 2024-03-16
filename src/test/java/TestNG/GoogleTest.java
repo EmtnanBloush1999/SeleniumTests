@@ -25,7 +25,14 @@ public class GoogleTest extends TestBase{
         By searchInput = By.id("APjFqb");
         bot.type(searchInput, searchQuery + Keys.RETURN);
         By resultStatsLabel = By.id("result-stats");
-        Assert.assertNotEquals(driver.findElement(resultStatsLabel).getText(), "");
+        wait.until(
+                f -> {
+                   var result=  driver.findElement(resultStatsLabel).getText();
+                   if (result.isEmpty()){return false;}
+                    Assert.assertNotEquals(result, "");
+                    return true;
+                });
+//        Assert.assertNotEquals(driver.findElement(resultStatsLabel).getText(), "");
     }
 
     @Test(testName = "Check Google Logo Exists", description = "Given I am on the Google homepage, Then the Google logo should be displayed")
