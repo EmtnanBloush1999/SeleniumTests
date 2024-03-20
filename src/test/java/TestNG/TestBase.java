@@ -45,7 +45,7 @@ public abstract class TestBase {
         ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.addArguments("start-maximized");
         chromeOptions.addArguments("--headless");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(chromeOptions);
 
 //        switch (browser){
 //            case "chrome":
