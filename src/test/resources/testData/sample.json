@@ -1,7 +1,10 @@
 {
-  "searchQuery": "Selenium WebDriver",
-  "SoftAssertionsTestData": {
-    "Username": "student",
-    "Password": "Password123"
+  "RegisterPage": {
+    "firstName": "Emtnan",
+    "lastName": "Bloush",
+    "email": "eemmtt999@gmail.com",
+    "phoneNumber": "0578963214",
+    "password": "mmttee1597536482",
+    "PasswordConfirm": "mmttee1597536482"
   }
 }
